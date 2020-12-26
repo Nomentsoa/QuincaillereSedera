@@ -5,14 +5,19 @@ class Produit {
     String label
     String description
     String code
+    Integer quantite
+    Integer prix
 
-    Date dateAchat
+    Date dateCreated
+    Date lastUpdated
 
 
     static constraints = {
-        id(nullable: false, unique: true, blank: false)
-        label(nullable: false, blank: false)
+        label(nullable: false)
         description(nullable: true)
-        code(nullable: false, blank: false)
+        code(nullable: false)
+        quantite(nullable: false)
+        prix(nullable: false)
     }
+
 }
