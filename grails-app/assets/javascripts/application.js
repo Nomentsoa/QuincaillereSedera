@@ -7,5 +7,9 @@
 //
 //= require jquery-3.3.1.min
 //= require bootstrap
+//= require quincaillerie
+//= require jquery-confirm
+//= require quincaillerie.init
+//= require quincaillerie.message.box
 //= require popper.min
 //= require_self
