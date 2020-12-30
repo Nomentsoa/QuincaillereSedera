@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <asset:link rel="icon" href="ic_logo_sedera.png" type="image/x-ico"/>
     <asset:stylesheet src="application.css"/>
+    <asset:stylesheet src="login.css"/>
     <asset:javascript src="application.js"/>
 
     <script type="text/javascript">
@@ -23,27 +24,11 @@
 
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-change">
-        <asset:image src="ic_logo_sedera.png" alt="Grails Logo"  width="50"/>
-        <a class="navbar-brand" href="#"><h2>Quincaillerie Sedera</h2></a>
-        <ui class="navbar-nav ml-auto">
-            <UIHelper:memberActionMenu/>
-        </ui>
-    </nav>
-</header>
+
 
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
-            <ul class="list-group">
-                <li class="list-group-item"> <g:link controller="produit" action="index">Liste des produits</g:link> </li>
-                <li class="list-group-item"><g:link controller="produit" action="create">Ajouter un produit</g:link></li>
-
-            </ul>
-        </nav>
-
-        <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+        <main role="main" class="col-sm-12 ml-sm-auto col-md-12 pt-3">
             <g:layoutBody/>
         </main>
     </div>
