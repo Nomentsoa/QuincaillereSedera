@@ -11,7 +11,7 @@ class SecurityInterceptor {
 
     boolean before(){
         if(!authenticationService.isAuthenticated()){
-            redirect(controller: "authentication", action: "login")
+            redirect(controller: "authentication", action: "front")
             return false
         }
         return true

@@ -2,11 +2,19 @@ package mg.lazanomentsoa.quicailleriesedera
 
 import mg.lazanomentsoa.quincailleriesedera.AuthenticationService
 import mg.lazanomentsoa.quincailleriesedera.MembreService
+import mg.lazanomentsoa.quincailleriesedera.ProduitService
 
 class AuthenticationController {
 
     AuthenticationService authenticationService;
     MembreService membreService
+    ProduitService produitService
+
+    def front(){
+        println("laza kely")
+        def reponse = produitService.list(params)
+        [produitList: reponse.list, total: reponse.count]
+    }
     def login(){
         if(authenticationService.isAuthenticated()){
             redirect(controller: "produit", action: "index")
@@ -17,13 +25,13 @@ class AuthenticationController {
         if(authenticationService.doLogin(params.username, params.motDePasse)){
             redirect(controller: "produit", action: "index")
         }else{
-            redirect(controller: "authentication", action: "login")
+            redirect(controller: "authentication", action: "front")
         }
     }
 
     def logout(){
         session.invalidate()
-        redirect(controller: "authentication", action: "login")
+        redirect(controller: "authentication", action: "front")
     }
 
     def registration(){

@@ -5,6 +5,7 @@ import mg.lazanomentsoa.quincailleriesedera.ProduitService
 
 class ProduitController {
     ProduitService produitService
+
     def index() {
         println("laza kely")
         def reponse = produitService.list(params)
