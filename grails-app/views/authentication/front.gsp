@@ -7,6 +7,21 @@
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <meta name="layout" content="public">
+<div class="row">
+<g:each in="${produitList}" var="produit">
+    <div class="col-sm-3" style="margin-top: 1em; margin-bottom: 1em" >
+        <g:img dir="images" file="image1.jpg" class="card-img-top" />
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</g:each>
+</div>
+
 <div class="card">
     <div class="card-header">
         <g:message code="accueil.produit"/>
@@ -37,12 +52,19 @@
             </thead>
             <tbody>
             <g:each in="${produitList}" var="produit">
-                <tr>
+               %{-- <tr>
                     <td>${produit?.label}</td>
                     <td>${produit?.code}</td>
                     <td class="text-center">${produit?.quantite}</td>
                     <td class="text-center">${produit?.prix} Ar</td>
-                </tr>
+                </tr>--}%
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
             </g:each>
             </tbody>
         </table>
