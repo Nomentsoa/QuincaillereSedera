@@ -13,7 +13,7 @@
         <g:message code="mofication.produit"/>
     </div>
     <div class="card-body">
-        <g:form controller="produit" action="update">
+        <g:form controller="produit" action="update"  enctype="multipart/form-data">
             <g:hiddenField name="id" value="${produit.id}"/>
             <g:render template="formnewproduit"/>
             <div class="form-action-panel">

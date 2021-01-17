@@ -15,11 +15,17 @@
     <g:textField name="description" class="form-control" value="${produit?.description}" placeholder="Déscription du produit"/>
 </div>
 
-<div class="form-group">
-    <label><g:message code="prix.produit"/>*</label>
-    <g:textField name="prix" class="form-control" value="${produit?.prix}" placeholder="Prix unitaire du produit"/>
+
+<label><g:message code="prix.produit"/>*</label>
+<div class="input-group">
+
+    <g:textField name="prix" class="form-control" value="${produit?.prix}" placeholder="Prix unitaire du produit en Ariary"/>
     <UIHelper:renderErrorMessage fieldName="prix" model="${produit}" errorMessage="Le champs  prix du produit n'est pas rempli convenablement"/>
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="validationTooltipUsernamePrepend">Ariary</span>
+    </div>
 </div>
+
 
 <div class="form-group">
     <label><g:message code="quantite.produit"/>*</label>

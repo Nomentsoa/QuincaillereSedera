@@ -58,10 +58,10 @@
 <g:each in="${produitList}" var="produit">
     <div class="col-sm-3 " style="margin-top: 1em; " >
         <g:if test="${produit.image}">
-            <img src="${resource(dir: "images", file: "${produit.id}-${produit.image}")}" class="card-img-top" style="height: 190px"/>
+            <img src="${resource(dir: "images", file: "${produit.id}-${produit.image}")}" class="card-img-top" style="height: 210px"/>
         </g:if>
         <g:else>
-            <div style="background: #5a6268; height: 190px">laza nomentsoa pas de photo</div>
+            <div style="background: #5a6268; height: 210px">laza nomentsoa pas de photo</div>
         </g:else>
 
         <div class="card shadow p-3 mb-5 bg-white rounded">

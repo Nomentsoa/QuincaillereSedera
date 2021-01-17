@@ -63,7 +63,7 @@ class ProduitController {
             flash.message = AppUtil.infoMessage("Le produit est invalide.", false)
             redirect(controller: "produit", action: "index")
         }else{
-            reponse = produitService.update(reponse, params)
+            reponse = produitService.update(reponse, params, request)
             println("tafiditra ato @ erreur modification izy => "+reponse)
             if(!reponse.isSuccess){
                 flash.redirectParams = reponse.model

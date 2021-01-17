@@ -32,6 +32,7 @@
                     <g:sortableColumn property="label" title="${g.message(code: "nom.produit")}" class="text-center"/>
                     <g:sortableColumn property="code" title="${g.message(code: "code.produit")}" class="text-center"/>
                     <g:sortableColumn property="quantite" title="${g.message(code: "quantite.produit")}" class="text-center"/>
+                    <g:sortableColumn property="prix" title="${g.message(code: "quantite.prix")}" class="text-center"/>
                     <th class="action-row"><g:message code="action"/> </th>
                 </tr>
             </thead>
@@ -41,6 +42,7 @@
                         <td>${produit?.label}</td>
                         <td>${produit?.code}</td>
                         <td class="text-center">${produit?.quantite}</td>
+                        <td class="text-center">${produit?.prix} Ariary</td>
                         <td>
                             <div class="btn-group">
                                 <g:link controller="produit" action="details" class="btn btn-secondary" id="${produit.id}"><i class="fas fa-eye"></i></g:link>
