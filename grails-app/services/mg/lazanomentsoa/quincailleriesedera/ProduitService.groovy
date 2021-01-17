@@ -4,22 +4,26 @@ import grails.gorm.transactions.Transactional
 import grails.web.servlet.mvc.GrailsParameterMap
 import mg.lazanomentsoa.Produit
 
+import javax.servlet.http.HttpServletRequest
+
+
 @Transactional
 class ProduitService {
 
-    def save(GrailsParameterMap params){
+    def save(GrailsParameterMap params, HttpServletRequest request){
         Produit product = new Produit(params)
         def response = AppUtil.saveResponse(false, product)
         if(product.validate()){
             product.save(flush: true, failOnError: true)
             if(!product.hasErrors()){
                 response.isSuccess = true
+                uploadImage(product, request)
             }
         }
         return response
     }
 
-    def update(Produit produit, GrailsParameterMap params){
+    def update(Produit produit, GrailsParameterMap params, HttpServletRequest request){
         produit.properties = params
         def reponse = AppUtil.saveResponse(false, produit)
 
@@ -27,6 +31,7 @@ class ProduitService {
             produit.save(flush: true)
             if(!produit.hasErrors()){
                 reponse.isSuccess = true
+                uploadImage(produit, request)
             }
         }
         return reponse
@@ -57,5 +62,16 @@ class ProduitService {
             return false
         }
         return true
+    }
+
+    def uploadImage(Produit produit, HttpServletRequest request){
+
+        if(request.getFile("produitImage") && !request.getFile("produitImage").filename.equals("")){
+            String image = FileUtil.uploadProduitImage(produit.id, request.getFile("produitImage"))
+            if(!image.equals("")){
+                produit.image = image
+                produit.save(flush:true)
+            }
+        }
     }
 }

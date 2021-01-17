@@ -26,3 +26,8 @@
     <g:textField name="quantite" class="form-control" value="${produit?.quantite}" placeholder="Quantité achetée"/>
     <UIHelper:renderErrorMessage fieldName="quantite" model="${produit}" errorMessage="Le champs  quantité du produit n'est pas rempli convenablement"/>
 </div>
+
+<div class="form-group">
+    <label>Image du produit</label>
+    <g:field type="file" name="produitImage" class="form-control" placeholder="Selection une image"/>
+</div>

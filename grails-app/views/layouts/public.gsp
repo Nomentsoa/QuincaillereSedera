@@ -22,7 +22,7 @@
     <g:layoutHead/>
 </head>
 
-<body>
+<body style="background: #faf8f6">
 
 
 

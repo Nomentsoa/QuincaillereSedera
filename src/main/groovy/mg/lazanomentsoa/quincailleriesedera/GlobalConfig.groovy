@@ -7,6 +7,6 @@ class GlobalConfig {
     ]
 
     public static Integer itemParPage(){
-        return 5
+        return 8
     }
 }

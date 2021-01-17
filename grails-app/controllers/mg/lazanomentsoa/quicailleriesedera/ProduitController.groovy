@@ -18,7 +18,7 @@ class ProduitController {
 
     def save(){
         println("tafiditra ato ilay izy")
-        def response = produitService.save(params)
+        def response = produitService.save(params, request)
 
         if(!response.isSuccess){
             println("tafiditra erreur => kel"+response)

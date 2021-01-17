@@ -8,11 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <meta name="layout" content="public">
 
-<div id="global-wrapper">
-    <div id="content-wrapper">
+
+    <div id="content-wrapper" class="">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-md-4 mx-auto">
+                <div class="col-sm-6 col-md-4 mx-auto shadow p-3 mb-5 bg-white rounded">
                     <h1 class="text-center login-title">Quincainllerie Sedera Login</h1>
                     <div class="account-wall">
                         <g:img dir="images" file="ic_logo_sedera.png" class="profile-img" />

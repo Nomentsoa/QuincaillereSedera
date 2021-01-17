@@ -7,6 +7,7 @@ class Produit {
     String code
     Integer quantite
     Integer prix
+    String image
 
     Date dateCreated
     Date lastUpdated
@@ -18,6 +19,7 @@ class Produit {
         code(nullable: false)
         quantite(nullable: false)
         prix(nullable: false)
+        image(nullable: true)
     }
 
 }

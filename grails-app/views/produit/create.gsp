@@ -14,7 +14,7 @@
     </div>
 
     <div class="card-body">
-        <g:form controller="produit" action="save">
+        <g:form controller="produit" action="save" enctype="multipart/form-data">
             <g:render template="formnewproduit"/>
             <div class="form-action-panel">
                 <g:submitButton name="save" class="btn btn-primary" value="${g.message(code: "enregistrer")}"/>
