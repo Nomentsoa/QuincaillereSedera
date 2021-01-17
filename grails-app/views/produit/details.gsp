@@ -13,14 +13,28 @@
     <g:message code="detail"/>
   </div>
   <div class="card-body">
-    <g:if test="${produit}">
-      <g:if test="${produit.image}">
-        <img src="${resource(dir: "images", file: "${produit.id}-${produit.image}")}" class="card-img-top" style="width: 190px; text-align: center"/>
-      </g:if>
-      <g:else>
-        <div style="background: #5a6268; width: 190px; height: 190px">laza nomentsoa pas de photo</div>
-      </g:else>
 
+    <g:if test="${produit}">
+      <div class="row" style="margin-bottom: 1em">
+        <div class="col align-self-center">
+          <g:if test="${idPrevious != null}">
+            <g:link controller="produit" action="details" id="${idPrevious}" style="horiz-align: center"><i class="fa fa-chevron-left" style="width: 50%"></i></g:link>
+          </g:if>
+        </div>
+        <div class="col-6" style="text-align: center">
+          <g:if test="${produit.image}">
+            <img src="${resource(dir: "images", file: "${produit.id}-${produit.image}")}" class="card-img-top" style="width: 190px; text-align: center"/>
+          </g:if>
+          <g:else>
+            <div style="background: #5a6268; width: 190px; height: 190px">laza nomentsoa pas de photo</div>
+          </g:else>
+        </div>
+        <div class="col align-self-center" style="text-align:right";>
+          <g:if test="${idNext != null}">
+            <g:link controller="produit" action="details" id="${idNext}" style="horiz-align: center"><i class="fa fa-chevron-right" style="width: 50%"></i></g:link>
+          </g:if>
+        </div>
+      </div>
       <table class="table">
         <tr>
           <th class="text-right"> <g:message code="nom.produit"/></th><td class="text-left">${produit.label}</td>

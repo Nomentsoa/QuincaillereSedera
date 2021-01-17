@@ -41,6 +41,12 @@ class ProduitService {
         return Produit.get(id)
     }
 
+    def getNextProduitId(Serializable id){
+        def idNext = Produit.executeQuery("select id from Produit where id = (select min(id) from Produit where id > ?)", id)[0]
+        def idPrevious = Produit.executeQuery("select id from Produit where id = (select max(id) from Produit where id < ?)", id)[0]
+        return [idNext:idNext, idPrevioux:idPrevious]
+    }
+
     def list(GrailsParameterMap params){
         params.max = params.max ?: GlobalConfig.itemParPage()
         List<Produit> produitList = Produit.createCriteria().list(params){

@@ -37,7 +37,7 @@ class ProduitController {
         if(!reponse){
             redirect(controller: "produit", action: "index")
         }else{
-            [produit: reponse]
+            [produit: reponse, idPrevious: produitService.getNextProduitId(id).idPrevioux, idNext:produitService.getNextProduitId(id).idNext]
         }
     }
 
